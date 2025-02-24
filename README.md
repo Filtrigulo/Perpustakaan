@@ -19,5 +19,27 @@ Hi, ini adalah Homepage Perpustakaan Filtri Marni Gulo. Perpustakaan Filtri Marn
     <tr>
         <td>NIM</td>
         <td>220709017</td>
+    </tr>
+    <tr>
+        <td>Program Studi</td>
+        <td>Perpustakaan dan Sains Informasi</td>
+    </tr> 
+    <tr>
+        <td>Fakultas</td>
+        <td>Ilmu Budaya</td>
+    </tr>  
+    <tr>
+        <td>Universitas</td>
+        <td>Universitas Sumatera Utara</td>
+    </tr>
+    <tr>
+        <td>Domisili</td>
+        <td>Medan</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>filtrig@gmail.com</td>
+    
+    
         
-        
+      
