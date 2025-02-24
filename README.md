@@ -7,3 +7,12 @@ Hi, ini adalah Homepage Perpustakaan Filtri Marni Gulo. Perpustakaan Filtri Marn
   <h4><a href="https://lib.ugm.ac.id/">Kerjasama</a>
 <h3>Homepage</h3>
 <h2>Biodata</h2>
+<table>
+    <tr>
+        <th>Informasi</th>
+        <th>Detail</th>
+    </tr>
+    <tr>
+        <td>Nama</td>
+        <td>Filtri Marni Gulo</td>
+        
