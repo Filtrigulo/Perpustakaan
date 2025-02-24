@@ -40,9 +40,7 @@ Hi, ini adalah Homepage Perpustakaan Filtri Marni Gulo. Perpustakaan Filtri Marn
         <td>Email</td>
         <td>filtrig@gmail.com</td>
 
-<body>
-<h1>Contact Us</h1>
-     <label for="Email">Email:</label>
+
 
     
     
