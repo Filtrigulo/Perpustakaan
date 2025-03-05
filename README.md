@@ -1,5 +1,5 @@
 # About Me
-                                                    # Selamat Datang di Perpustakaan Filtri Marni Gulo
+# Selamat Datang di Perpustakaan Filtri Marni Gulo
 ![perpustakaan univgm](https://github.com/user-attachments/assets/41dbc224-bc2e-4eb5-ae2c-ae72620da9db)
 
 <body>
