@@ -14,30 +14,6 @@
 </ul>
 </nav>
 </header>
-
-<style>
-header {
-   background-color: 77C3EC;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
-
-header img {
-   height: 50px;
-}
-
-header nav ul li {
-   display: inline;
-   margin: 0 10px;
-}
-
-header nav ul li a {
-   color: white;
-   text-decoration: none;
-}
-</syle>
-<body>
 <body>
 Hi, ini adalah Homepage Perpustakaan Filtri Marni Gulo. Perpustakaan Filtri Marni Gulo dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
   <h4><a href="https://lib.ugm.ac.id/">Kerjasama</a>
