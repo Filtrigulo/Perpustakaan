@@ -39,7 +39,43 @@ Hi, ini adalah Homepage Perpustakaan Filtri Marni Gulo. Perpustakaan Filtri Marn
     <tr>
         <td>Email</td>
         <td>filtrig@gmail.com</td>
+<header>
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" />
+   <h1>Perpustakaan Filtri Marni Gulo</h1>
+<nav>
+<ul>
+         <li><a href="index.html">Homepage</a></li>
+         <li><a href="biodata.html">About</a></li>
+	 <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </div>
+</ul>
+</nav>
+</header>
 
+<style>
+header {
+   background-color: 77C3EC;
+   color: white;
+   padding: 20px 10px;
+   text-align: center;
+}
+
+header img {
+   height: 50px;
+}
+
+header nav ul li {
+   display: inline;
+   margin: 0 10px;
+}
+
+header nav ul li a {
+   color: white;
+   text-decoration: none;
+}
+</syle>
+<body>
 
 
     
