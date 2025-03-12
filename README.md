@@ -24,7 +24,6 @@ p {
 
   <h4><a href="https://lib.ugm.ac.id/">Kerjasama</a>
     <h2><a href="https://filtrigulo.github.io/Contact_Us/">Contact Us</a>
-<h3>Homepage</h3>
 <h2>Biodata</h2>
 <table>
     <tr>
