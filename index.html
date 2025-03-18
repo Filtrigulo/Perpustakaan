@@ -10,36 +10,45 @@
         body {
             text-align: center;
             padding-top: 50px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            font-family: Arial, sans-serif;
         }
         .box {
             width: 100px;
             height: 100px;
-            background: red;
+            background: white;
             margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         header {
-            background: #f4f4f4;
+            background: rgba(0, 0, 0, 0.2);
             padding: 20px;
+            border-radius: 10px;
         }
         nav a {
             margin: 10px;
             padding: 10px;
             text-decoration: none;
-            background: #007BFF;
-            color: white;
+            background: white;
+            color: #ff7e5f;
             border-radius: 5px;
+            font-weight: bold;
         }
         footer {
             margin-top: 50px;
             padding: 10px;
-            background: #f4f4f4;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
         .marquee {
             display: inline-block;
             white-space: nowrap;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            color: #007BFF;
+            color: yellow;
+            position: relative;
         }
     </style>
 </head>
@@ -53,13 +62,13 @@
     </header>
     
     <main>
-<h2 class="marquee">Selamat Datang di Perpustakaan Filtri!</h2>
+        <h2 class="marquee">Selamat Datang di Perpustakaan Filtri!</h2>
         <p>
             Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
         </p>
         
         <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
+        <a href="https://library.unila.ac.id/kki/" target="_blank" style="color: yellow; font-weight: bold;">Perpustakaan Universitas Lampung</a>
         
         <h3>Animasi GSAP</h3>
         <div class="box"></div>
@@ -71,7 +80,10 @@
     
     <script>
         gsap.to(".box", { duration: 2, x: 300, rotation: 360, repeat: -1, yoyo: true });
-        gsap.to(".marquee", { x: "100%", duration: 5, repeat: -1, ease: "linear" });
+        gsap.fromTo(".marquee", 
+            { x: "-100%" }, 
+            { x: "100%", duration: 5, repeat: -1, ease: "linear" }
+        );
     </script>
 </body>
 </html>
