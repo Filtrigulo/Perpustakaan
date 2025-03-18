@@ -1,3 +1,4 @@
+You said:
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,10 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Filtri</title>
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PERPUSTAKAAN FILTRI</h1>
+        <nav>
+            <a href="about.html" class="button">About Me</a>
+            <a href="contact-us.html" class="button">Hubungi Kami</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Selamat Datang di Perpustakaan Filtri!</h2>
+        <p>
+            Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
+        </p>
+        <h3>Kerja Sama dan Referensi</h3>
+        <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
+    </main>
+    <footer>
+        <p>© 2025 Filtri Marni Gulo</p>
+    </footer>
+</body>
+</html>
+tolong gabungkan kode ini diatas dan kode dibawah ini agar menyatu
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Berjalan</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             background-color: #f0f0f0;
             overflow: hidden;
         }
@@ -36,76 +70,11 @@
         .walk {
             animation: walk 5s linear infinite;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #555;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        main {
-            text-align: center;
-            padding: 20px;
-        }
-        .book-image {
-            display: block;
-            width: 200px;
-            position: absolute;
-            right: 5%;
-            bottom: -20%;
-            animation: fly 5s linear infinite;
-        }
-        @keyframes fly {
-            from {
-                bottom: -20%;
-            }
-            to {
-                bottom: 100%;
-            }
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>PERPUSTAKAAN FILTRI</h1>
-        <nav>
-            <a href="about.html" class="button">About Me</a>
-            <a href="contact-us.html" class="button">Hubungi Kami</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Selamat Datang di Perpustakaan Filtri!</h2>
-        <p>
-            Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
-        </p>
-        <img src="book.png" alt="https://png.pngtree.com/png-vector/20230930/ourmid/pngtree-school-materials-clip-art-cartoon-open-book-png-png-image_10147974.png" class="https://png.pngtree.com/png-vector/20230930/ourmid/pngtree-school-materials-clip-art-cartoon-open-book-png-png-image_10147974.png">
-        <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
-    </main>
     <div class="container">
         <div class="character walk"></div>
     </div>
-    <footer>
-        <p>© 2025 Filtri Marni Gulo</p>
-    </footer>
 </body>
 </html>
