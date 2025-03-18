@@ -34,6 +34,13 @@
             padding: 10px;
             background: #f4f4f4;
         }
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +53,7 @@
     </header>
     
     <main>
-        <h2>Selamat Datang di Perpustakaan Filtri!</h2>
+        <h2 class="marquee">Selamat Datang di Perpustakaan Filtri!</h2>
         <p>
             Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
         </p>
@@ -64,6 +71,7 @@
     
     <script>
         gsap.to(".box", { duration: 2, x: 300, rotation: 360, repeat: -1, yoyo: true });
+        gsap.to(".marquee", { x: "100%", duration: 5, repeat: -1, ease: "linear" });
     </script>
 </body>
 </html>
