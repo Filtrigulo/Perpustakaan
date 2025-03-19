@@ -4,9 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Filtri</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Background parallax effect */
+        .parallax {
+            position: relative;
+            height: 100vh;
+            background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
+            background-size: cover;
+            transform: scale(1.1);
+            animation: zoomIn 15s infinite alternate;
+        }
+
+        /* Animasi untuk zoom in latar belakang */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Animasi teks di atas latar belakang */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .content h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ff6347;
+            animation: slideFromLeft 2s ease-out;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            color: #fff;
+            animation: slideFromRight 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideFromRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Main Content */
+        header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Main content */
+        main {
+            z-index: 2;
+            position: relative;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        main h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        main img {
+            width: 80%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            font-size: 1.2em;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Scroll animation */
+        .scroll-container {
+            padding: 100px 20px;
+            background-color: #2c3e50;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .scroll-container h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button animation */
+        .btn {
+            background-color: #3498db;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+    </style>
 </head>
 <body>
+
+    <!-- Parallax Background Section -->
+    <div class="parallax">
+        <div class="content">
+            <h1>Selamat Datang di Perpustakaan Filtri!</h1>
+            <p>Menikmati animasi dan efek visual yang luar biasa di dunia perpustakaan digital ini.</p>
+        </div>
+    </div>
+
+    <!-- Header with Navigation -->
     <header>
         <h1>PERPUSTAKAAN FILTRI</h1>
         <nav>
@@ -14,6 +220,8 @@
             <a href="contact-us.html" class="button">Hubungi Kami</a>
         </nav>
     </header>
+
+    <!-- Main Content -->
     <main>
         <h2>Selamat Datang di Perpustakaan Filtri!</h2>
         <img src="perpustakaan univ lampung.jpeg" alt="Perpustakaan Filtri" width="500">
@@ -21,10 +229,21 @@
             Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
         </p>
         <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
+        <a href="https://library.unila.ac.id/kki/" target="_blank" class="button">Perpustakaan Universitas Lampung</a>
     </main>
-    <footer>
+
+    <!-- Scrollable Content Section -->
+    <div class="scroll-container">
+        <h2>Scroll Untuk Melihat Lebih Banyak!</h2>
+        <p>Halaman ini akan memberi Anda pengalaman luar biasa saat Anda menggulir ke bawah.</p>
+        <a href="#footer" class="btn">Ke Footer</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer">
         <p>© 2025 Filtri Marni Gulo</p>
     </footer>
+
 </body>
 </html>
+
