@@ -6,15 +6,64 @@
     <title>Perpustakaan Filtri</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0a192f; color: white; font-family: Arial, sans-serif; overflow-x: hidden; }
-        canvas { display: block; position: absolute; top: 0; left: 0; z-index: -1; }
-        header, main, footer { position: relative; z-index: 1; padding: 20px; text-align: center; }
-        main { min-height: 100vh; padding-bottom: 50px; }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+        
+        .glitch {
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: white;
+            background: black;
+            overflow: hidden;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            animation: glitch-anim 0.3s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 blue;
+            animation: glitch-anim2 0.3s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(20px, 9999px, 50px, 0); }
+            100% { clip: rect(50px, 9999px, 100px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(50px, 9999px, 80px, 0); }
+            100% { clip: rect(10px, 9999px, 60px, 0); }
+        }
     </style>
 </head>
 <body>
-    <canvas id="animationCanvas"></canvas>
     <header>
         <h1>PERPUSTAKAAN FILTRI</h1>
         <nav>
@@ -24,7 +73,7 @@
     </header>
     <main>
         <h2>Selamat Datang di Perpustakaan Filtri!</h2>
-
+        <div class="glitch" data-text="GLITCH EFFECT">GLITCH EFFECT</div>
         <img src="perpustakaan univ lampung.jpeg" alt="Perpustakaan Filtri" width="500">
         <p>
             Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
@@ -35,102 +84,5 @@
     <footer>
         <p>© 2025 Filtri Marni Gulo</p>
     </footer>
-    <script>
-        const canvas = document.getElementById("animationCanvas");
-        const ctx = canvas.getContext("2d");
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        let particlesArray = [];
-        const mouse = { x: null, y: null, radius: 150 };
-        
-        class Particle {
-            constructor(x, y, size, speedX, speedY, color) {
-                this.x = x;
-                this.y = y;
-                this.size = size;
-                this.speedX = speedX;
-                this.speedY = speedY;
-                this.color = color;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-                
-                const dx = this.x - mouse.x;
-                const dy = this.y - mouse.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius) {
-                    this.x += dx / distance * 5;
-                    this.y += dy / distance * 5;
-                }
-            }
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        function initParticles() {
-            particlesArray = [];
-            for (let i = 0; i < 150; i++) {
-                let size = Math.random() * 6 + 2;
-                let x = Math.random() * canvas.width;
-                let y = Math.random() * canvas.height;
-                let speedX = Math.random() * 2 - 1;
-                let speedY = Math.random() * 2 - 1;
-                let color = hsl(${Math.random() * 360}, 100%, 70%);
-                particlesArray.push(new Particle(x, y, size, speedX, speedY, color));
-            }
-        }
-        
-        function connectParticles() {
-            for (let i = 0; i < particlesArray.length; i++) {
-                for (let j = i + 1; j < particlesArray.length; j++) {
-                    const dx = particlesArray[i].x - particlesArray[j].x;
-                    const dy = particlesArray[i].y - particlesArray[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
-                        ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particlesArray.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
-        
-        window.addEventListener("mousemove", (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-        
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles();
-        });
-        
-        initParticles();
-        animate();
-    </script>
 </body>
 </html>
