@@ -1,3 +1,3 @@
 window.onload = function() {
-    alert("Selamat datang di Perpustakaan Annisa! Nikmati koleksi buku dan sumber belajar kami.");
+    alert("Selamat datang di Perpustakaan Filtri! Nikmati berbagai koleksi dan konten yang saya bagikan.");
 };
