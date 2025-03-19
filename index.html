@@ -4,9 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Filtri</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pengaturan dasar untuk body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Animasi latar belakang */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6a00, #ffcc00, #00bfff, #ff6347);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        /* Animasi gradien bergerak */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header dan navigasi */
+        header {
+            z-index: 2;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Main content */
+        main {
+            z-index: 2;
+            position: relative;
+            color: #fff;
+            font-size: 1.2em;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        main h2 {
+            font-size: 2em;
+        }
+
+        main img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 0.8em;
+        }
+
+    </style>
 </head>
 <body>
+    <!-- Latar belakang animasi -->
+    <div class="background"></div>
+
+    <!-- Header dengan navigasi -->
     <header>
         <h1>PERPUSTAKAAN FILTRI</h1>
         <nav>
@@ -14,15 +121,19 @@
             <a href="contact-us.html" class="button">Hubungi Kami</a>
         </nav>
     </header>
+
+    <!-- Main content -->
     <main>
         <h2>Selamat Datang di Perpustakaan Filtri!</h2>
-        <img src="perpustakaan univ lampung.jpeg" alt="Perpustakaan Filtri" width="500">
+        <img src="perpustakaan univ lampung.jpeg" alt="Perpustakaan Filtri">
         <p>
             Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
         </p>
         <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
+        <a href="https://library.unila.ac.id/kki/" target="_blank" class="button">Perpustakaan Universitas Lampung</a>
     </main>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Filtri Marni Gulo</p>
     </footer>
