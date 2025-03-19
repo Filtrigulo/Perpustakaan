@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Filtri</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a192f; color: white; font-family: Arial, sans-serif; overflow-x: hidden; }
+        canvas { display: block; position: absolute; top: 0; left: 0; z-index: -1; }
+        header, main, footer { position: relative; z-index: 1; padding: 20px; text-align: center; }
+        main { min-height: 100vh; padding-bottom: 50px; }
+    </style>
 </head>
 <body>
+    <canvas id="animationCanvas"></canvas>
     <header>
         <h1>PERPUSTAKAAN FILTRI</h1>
         <nav>
@@ -16,9 +24,9 @@
     </header>
     <main>
         <h2>Selamat Datang di Perpustakaan Filtri!</h2>
-        <img src="perpustakaan univ lampung.jpeg" alt="Perpustakaan Filtri" width="500">
+        <img src="gambar animasi.jpg" alt="Perpustakaan Filtri">
         <p>
-            Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
+            Hi, ini adalah Homepage Perpustakaan personal Filtri. Perpustakaan Filtri adalah sebuah platform yang dikembangkan khusus untuk memenuhi kebutuhan mata kuliah Pengembangan Web Perpustakaan. Dalam perpustakaan ini, Anda akan menemukan berbagai konten yang saya bagikan, mulai dari tutorial, referensi, hingga materi pembelajaran lainnya yang berkaitan dengan dunia pengembangan web dan teknologi informasi. Perpustakaan Filtri dirancang dengan tujuan untuk memberikan sumber daya yang bermanfaat bagi mahasiswa dan siapa pun yang tertarik dalam bidang pengembangan web, terutama dalam konteks aplikasi perpustakaan digital. Anda dapat mengeksplorasi berbagai topik yang relevan dengan pembelajaran dan penerapan pengembangan web di bidang perpustakaan, serta mendapatkan wawasan baru yang dapat memperkaya pengetahuan Anda!
         </p>
         <h3>Kerja Sama dan Referensi</h3>
         <a href="https://library.unila.ac.id/kki/" target="_blank">Perpustakaan Universitas Lampung</a>
@@ -26,5 +34,107 @@
     <footer>
         <p>© 2025 Filtri Marni Gulo</p>
     </footer>
+    
+    <!-- Menyisipkan script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
+    <script>
+        const canvas = document.getElementById("animationCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let particlesArray = [];
+        const mouse = { x: null, y: null, radius: 150 };
+        
+        class Particle {
+            constructor(x, y, size, speedX, speedY, color) {
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.speedX = speedX;
+                this.speedY = speedY;
+                this.color = color;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    this.x += dx / distance * 5;
+                    this.y += dy / distance * 5;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < 150; i++) {
+                let size = Math.random() * 6 + 2;
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                let speedX = Math.random() * 2 - 1;
+                let speedY = Math.random() * 2 - 1;
+                let color = hsl(${Math.random() * 360}, 100%, 70%);
+                particlesArray.push(new Particle(x, y, size, speedX, speedY, color));
+            }
+        }
+        
+        function connectParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    const dx = particlesArray[i].x - particlesArray[j].x;
+                    const dy = particlesArray[i].y - particlesArray[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        
+        window.addEventListener("mousemove", (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+        
+        initParticles();
+        animate();
+    </script>
 </body>
 </html>
