@@ -1,1 +1,31 @@
+<!-- Tabel Perkalian -->
+<section style="margin-top: 40px; padding: 20px; background-color: #e0f7fa; border-radius: 10px;">
+  <h2 style="text-align: center; color: #00695c;">Tabel Perkalian 1-10</h2>
+  <div style="overflow-x: auto;">
+    <table id="multiplicationTable" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    </table>
+  </div>
+</section>
+
+<script>
+  const table = document.getElementById('multiplicationTable');
+
+  // Buat header
+  let headerRow = '<tr><th style="background-color: #00796b; color: white;">×</th>';
+  for (let i = 1; i <= 10; i++) {
+    headerRow += `<th style="background-color: #00796b; color: white;">${i}</th>`;
+  }
+  headerRow += '</tr>';
+  table.innerHTML += headerRow;
+
+  // Buat isi tabel
+  for (let i = 1; i <= 10; i++) {
+    let row = `<tr><th style="background-color: #00796b; color: white;">${i}</th>`;
+    for (let j = 1; j <= 10; j++) {
+      row += `<td style="border: 1px solid #4db6ac; padding: 8px; text-align: center;">${i * j}</td>`;
+    }
+    row += '</tr>';
+    table.innerHTML += row;
+  }
+</script>
 
